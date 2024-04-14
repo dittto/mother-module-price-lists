@@ -1,0 +1,24 @@
+{
+  "name" : "mothergroup/mother-module-price-lists",
+  "description": "Handles the price lists for Pods",
+  "homepage" : "https://github.com/mothergroup/mother-module-price-lists",
+  "authors" : [
+    {
+      "name" : "Mother Group Ltd",
+      "homepage": "https://www.thisismother.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mothergroup\\PriceLists\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mothergroup\\PriceLists\\Providers\\PriceListReferencesServiceProvider",
+        "Mothergroup\\PriceLists\\Providers\\PriceListServiceProvider"
+      ]
+    }
+  }
+}
