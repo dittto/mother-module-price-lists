@@ -9,6 +9,41 @@ use Mothergroup\Pods\Models\Pod;
 use Mothergroup\PriceLists\Events\PriceListChange;
 use Mothergroup\Users\Models\Company;
 
+/**
+ * Mothergroup\PriceLists\Models\PriceList
+ *
+ * @property int $id
+ * @property int|null $pod_id
+ * @property int|null $company_id
+ * @property string $name
+ * @property string $country
+ * @property bool $is_shared
+ * @property array|null $product_categories
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read Company|null $company
+ * @property-read Pod|null $pod
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Mothergroup\PriceLists\Models\PriceListPrice[] $prices
+ * @property-read int|null $prices_count
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList newQuery()
+ * @method static \Illuminate\Database\Query\Builder|PriceList onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList query()
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereCompanyId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereIsShared($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList wherePodId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereProductCategories($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PriceList whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|PriceList withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|PriceList withoutTrashed()
+ * @mixin \Eloquent
+ */
 class PriceList extends HasAuditLogModel
 {
     use SoftDeletes;

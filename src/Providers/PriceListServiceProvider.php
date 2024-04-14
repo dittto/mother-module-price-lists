@@ -7,6 +7,8 @@ use Mothergroup\PriceLists\Clients\PriceListClient;
 use Mothergroup\PriceLists\Clients\PriceListClientInterface;
 use Mothergroup\PriceLists\Helpers\PriceListSearchHelper;
 use Mothergroup\PriceLists\Helpers\PriceListSearchHelperInterface;
+use Mothergroup\PriceLists\Repositories\PriceListAuditLogRepository;
+use Mothergroup\PriceLists\Repositories\PriceListAuditLogRepositoryInterface;
 use Mothergroup\PriceLists\Repositories\PriceListRepository;
 use Mothergroup\PriceLists\Repositories\PriceListRepositoryInterface;
 use Mothergroup\PriceLists\Repositories\PriceListSearchRepository;
@@ -24,6 +26,7 @@ class PriceListServiceProvider extends ServiceProvider
             PriceListSearchHelperInterface::class,
             PriceListSearchRepositoryInterface::class,
             PriceListRepositoryInterface::class,
+            PriceListAuditLogRepositoryInterface::class,
         ];
     }
 
@@ -50,6 +53,10 @@ class PriceListServiceProvider extends ServiceProvider
 
         $this->app->singleton(PriceListRepositoryInterface::class, function (Application $app) {
             return new PriceListRepository();
+        });
+
+        $this->app->singleton(PriceListAuditLogRepositoryInterface::class, function (Application $app) {
+            return new PriceListAuditLogRepository();
         });
     }
 }
